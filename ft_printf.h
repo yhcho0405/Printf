@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:02:15 by youncho           #+#    #+#             */
-/*   Updated: 2021/01/31 16:22:51 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/03 09:54:41 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct	s_placeholder
 	int			fill;
 	int			width;
 	int			precision;
-	char		specifier;
 }				t_placeholder;
 
 void			placeholder_init(t_placeholder *state);
@@ -47,6 +46,7 @@ void			parse_flag(const char **format, t_placeholder *state);
 void			parse_width(const char **format, t_placeholder *state, va_list ap);
 void			parse_precision(const char **format, t_placeholder *state, va_list ap);
 
-
+int				print_c(t_placeholder *state, char c);
+int				print_s(t_placeholder *state, char *str);
 
 #endif

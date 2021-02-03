@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 17:10:17 by youncho           #+#    #+#             */
-/*   Updated: 2021/01/31 16:13:23 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/03 09:53:39 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	parse_precision(const char **format, t_placeholder *state, va_list ap)
 	if (**format != '.')
 		return ;
 	(*format)++;
+	state->precision = 0;
 	if (**format == '*')
 	{
 		state->precision = va_arg(ap, int);

@@ -21,5 +21,6 @@ int main() {
 	//printf("%d\n%c");
 
 	//printf("\nreturn : %d", printf("%c", *c++));
-	printf("\nreturn : %d", printf("hello %20%", 7, 3));
+	#define STR "(nu)"
+	printf("\nreturn : %d", printf("hello %*s", "world"));
 }
