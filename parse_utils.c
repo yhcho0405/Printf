@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 17:10:17 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/10 23:57:31 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 00:42:26 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ void	parse_width(const char **format, t_placeholder *state, va_list ap)
 	if (**format == '*')
 	{
 		state->width = va_arg(ap, int);
+		if (state->width < 0)
+		{
+			state->align = 1;
+			state->width *= -1;
+		}
 		(*format)++;
 	}
 	else if (ft_isdigit(**format))
@@ -68,7 +73,7 @@ void	parse_precision(const char **format, t_placeholder *state, va_list ap)
 	}
 }
 
-char		*get_base_str(ULL num, const char *base)
+char		*get_base_str(ULL num, const char *base, int precision)
 {
 	int		len;
 	char	*ret;
@@ -81,6 +86,8 @@ char		*get_base_str(ULL num, const char *base)
 	while (tnum /= base_len)
 		len++;
 	len++;
+	if (!num && !precision)
+		len = 0;
 	ret = malloc(len + 1);
 	ret[len] = 0;
 	while (--len >= 0)

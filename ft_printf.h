@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:02:15 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/10 23:54:35 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 00:29:17 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int				find_char(char c, const char *set);
 void			parse_flag(const char **format, t_placeholder *state);
 void			parse_width(const char **format, t_placeholder *state, va_list ap);
 void			parse_precision(const char **format, t_placeholder *state, va_list ap);
-char			*get_base_str(ULL num, const char *base);
+char			*get_base_str(ULL num, const char *base, int precision);
 int				print_c(t_placeholder *state, char c);
 int				print_s(t_placeholder *state, char *str);
 int				print_p(t_placeholder *state, ULL ptr);
