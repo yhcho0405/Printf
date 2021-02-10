@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:02:11 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/03 10:37:36 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 00:02:50 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ int		print_placeholder(char specifier, va_list ap, t_placeholder *state)
 	else if (specifier == 's')
 		return (print_s(state, va_arg(ap, char*)));
 	else if (specifier == 'p')
-		return (0);
+		return (print_p(state, (ULL)va_arg(ap, void*)));
 	else if (specifier == 'd' || specifier == 'i')
-		return (0);
+		return (print_di(state, va_arg(ap, int)));
 	else if (specifier == 'u')
-		return (0);
+		return (print_ux(state, va_arg(ap, unsigned int), BASE10));
 	else if (specifier == 'x')
-		return (0);
+		return (print_ux(state, va_arg(ap, unsigned int), BASE16L));
 	else if (specifier == 'X')
-		return (0);
+		return (print_ux(state, va_arg(ap, unsigned int), BASE16U));
 	else if (specifier == '%')
 		return (print_c(state, '%'));
 	return (0);
@@ -80,18 +80,18 @@ int		ft_printf(const char *format, ...)
 	return (len);
 }
 
-
+/*
 int main() {
-	#define STR	0
-	#define test1	"hello %.7%s", STR
-	#define test2	"hello %.%s", STR
-	#define test3	"hello %2%s", STR
-	#define test4	"hello %010%s", STR
-	#define test5	"hello %q0qq.%s", STR
-	#define test6	"hello %.0  %s", STR
-	#define test7	"hello %0.2%s", STR
-	#define test8	"hello %0-3--.%s", STR
-	#define test9	"hello %0-.%s", STR
+	#define STR -1234567
+	#define test1	"%20d", STR
+	#define test2	"%.20d", STR
+	#define test3	"%0.20d", STR
+	#define test4	"%.3d", STR
+	#define test5	"%3d", STR
+	#define test6	"%10.3d", STR
+	#define test7	"%3.10d", STR
+	#define test8	"%5d", STR
+	#define test9	"%7d", STR
 
 
 
@@ -124,3 +124,4 @@ int main() {
 	printf("|\nreturn : %d\n", ft_printf(test9));
 	printf("|\nreturn : %d", printf(test9));
 }
+*/
