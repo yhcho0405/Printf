@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:02:15 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/11 01:31:01 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 01:34:23 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define R_ERR -1
 # define TRUE 1
 # define FALSE 0
+# define UNUSED -1
 
 typedef struct	s_placeholder
 {

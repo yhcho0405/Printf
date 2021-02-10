@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:02:11 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/11 01:28:26 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 01:34:51 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	placeholder_init(t_placeholder *state)
 	state->align = FALSE;
 	state->fill = FALSE;
 	state->width = FALSE;
-	state->precision = -1;
+	state->precision = UNUSED;
 }
 
 int		print_placeholder(char specifier, va_list ap, t_placeholder *state)
