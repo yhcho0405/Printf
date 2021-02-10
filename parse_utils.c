@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 17:10:17 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/11 01:04:38 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 01:31:02 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,12 @@ void	parse_precision(const char **format, t_placeholder *state, va_list ap)
 	}
 }
 
-char		*get_base_str(ULL num, const char *base, int precision)
+char	*get_base_str(unsigned long long num, const char *base, int precision)
 {
-	int		len;
-	char	*ret;
-	int		base_len;
-	ULL		tnum;
+	int						len;
+	char					*ret;
+	int						base_len;
+	unsigned long long		tnum;
 
 	tnum = num;
 	base_len = ft_strlen(base);

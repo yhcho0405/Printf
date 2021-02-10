@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:02:11 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/11 00:02:50 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 01:28:26 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		print_placeholder(char specifier, va_list ap, t_placeholder *state)
 	else if (specifier == 's')
 		return (print_s(state, va_arg(ap, char*)));
 	else if (specifier == 'p')
-		return (print_p(state, (ULL)va_arg(ap, void*)));
+		return (print_p(state, (unsigned long long)va_arg(ap, void*)));
 	else if (specifier == 'd' || specifier == 'i')
 		return (print_di(state, va_arg(ap, int)));
 	else if (specifier == 'u')
@@ -55,10 +55,8 @@ void	parse_placeholder(const char **format, va_list ap, int *len)
 		parse_width(format, &state, ap);
 		parse_precision(format, &state, ap);
 	}
-	//print_placeholder(*(*format)++, ap, &state);
 	if (**format)
 		*len += print_placeholder(*(*format)++, ap, &state);
-	//printf("\n----------------------\n");printf("*   align : %d\n", state.align);printf("*   fill : %d\n", state.fill);printf("*   width : %d\n", state.width);printf("*   precision : %d\n", state.precision);printf("----------------------\n");
 }
 
 int		ft_printf(const char *format, ...)
@@ -79,49 +77,3 @@ int		ft_printf(const char *format, ...)
 	va_end(ap);
 	return (len);
 }
-
-/*
-int main() {
-	#define STR -1234567
-	#define test1	"%20d", STR
-	#define test2	"%.20d", STR
-	#define test3	"%0.20d", STR
-	#define test4	"%.3d", STR
-	#define test5	"%3d", STR
-	#define test6	"%10.3d", STR
-	#define test7	"%3.10d", STR
-	#define test8	"%5d", STR
-	#define test9	"%7d", STR
-
-
-
-
-	printf("\n----------1---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test1));
-	printf("|\nreturn : %d", printf(test1));
-	printf("\n----------2---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test2));
-	printf("|\nreturn : %d", printf(test2));
-	printf("\n----------3---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test3));
-	printf("|\nreturn : %d", printf(test3));
-	printf("\n----------4---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test4));
-	printf("|\nreturn : %d", printf(test4));
-	printf("\n----------5---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test5));
-	printf("|\nreturn : %d", printf(test5));
-	printf("\n----------6---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test6));
-	printf("|\nreturn : %d", printf(test6));
-	printf("\n----------7---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test7));
-	printf("|\nreturn : %d", printf(test7));
-	printf("\n----------8---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test8));
-	printf("|\nreturn : %d", printf(test8));
-	printf("\n----------9---------\n");
-	printf("|\nreturn : %d\n", ft_printf(test9));
-	printf("|\nreturn : %d", printf(test9));
-}
-*/

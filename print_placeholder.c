@@ -6,7 +6,7 @@
 /*   By: youncho <youncho@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 16:13:49 by youncho           #+#    #+#             */
-/*   Updated: 2021/02/11 00:54:44 by youncho          ###   ########.fr       */
+/*   Updated: 2021/02/11 01:29:21 by youncho          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ int		print_s(t_placeholder *state, char *str)
 	return (len);
 }
 
-
-
-int		print_p(t_placeholder *state, ULL ptr)
+int		print_p(t_placeholder *state, unsigned long long ptr)
 {
 	int		len;
 	char	*str;
@@ -79,7 +77,7 @@ int		print_p(t_placeholder *state, ULL ptr)
 	return (len);
 }
 
-int		print_ux(t_placeholder *state, ULL num, char *base)
+int		print_ux(t_placeholder *state, unsigned long long num, char *base)
 {
 	int		len;
 	char	*str;
@@ -102,7 +100,7 @@ int		print_ux(t_placeholder *state, ULL num, char *base)
 	return (len);
 }
 
-int		print_di(t_placeholder *state, LL num)
+int		print_di(t_placeholder *state, long long num)
 {
 	int		len;
 	char	*str;
@@ -129,4 +127,3 @@ int		print_di(t_placeholder *state, LL num)
 	free(str);
 	return (len);
 }
-
