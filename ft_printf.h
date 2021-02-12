@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdio.h>
 # include "Libft/libft.h"
 
 # define NONPASS "-0.*123456789cspdiuxX%"
