@@ -54,7 +54,7 @@ char			*get_base_str(unsigned long long num, const char *base,
 int				print_c(t_placeholder *state, char c);
 int				print_s(t_placeholder *state, char *str);
 int				print_p(t_placeholder *state, unsigned long long ptr);
-int				print_ux(t_placeholder *state, unsigned long long ptr,
+int				print_ux(t_placeholder *state, unsigned long long num,
 						char *base);
 int				print_di(t_placeholder *state, long long num);
 
